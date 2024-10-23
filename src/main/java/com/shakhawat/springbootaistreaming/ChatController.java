@@ -1,6 +1,7 @@
 package com.shakhawat.springbootaistreaming;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 
@@ -10,8 +11,11 @@ public class ChatController {
 
     private final ChatClient chatClient;
 
-    public ChatController(ChatClient.Builder chatClient) {
+    private final ChatModel chatModel;
+
+    public ChatController(ChatClient.Builder chatClient, ChatModel chatModel) {
         this.chatClient = chatClient.build();
+        this.chatModel = chatModel;
     }
 
     @PostMapping("/chat")
@@ -29,5 +33,12 @@ public class ChatController {
                 .stream()
                 .content();
     }
+
+    @GetMapping("/ask")
+    public String ask(@RequestParam(name = "prompt") String prompt) {
+        return chatModel.call(prompt);
+    }
+
+
 
 }

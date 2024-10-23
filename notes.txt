@@ -1,0 +1,7 @@
+>> ollama run mistral
+>> ollama run llama3.2:3b
+>> ollama stop llama3.2:3b
+>> ollama rm llama3.2:3b
+
+Pull: ollama pull hf.co/bartowski/gemma-2-2b-it-GGUF
+Set: spring.ai.ollama.chat.options.model=hf.co/bartowski/gemma-2-2b-it-GGUF
