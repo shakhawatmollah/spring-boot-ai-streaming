@@ -1,7 +1,36 @@
+Download ollama from here-
+https://ollama.com/download
+
+install ollama locally
+
 >> ollama run mistral
 >> ollama run llama3.2:3b
 >> ollama stop llama3.2:3b
 >> ollama rm llama3.2:3b
+>> ollama run llava // for image generation
+
+Here,
+run for running model
+stop for stopping model
+rm for removing model
 
 Pull: ollama pull hf.co/bartowski/gemma-2-2b-it-GGUF
 Set: spring.ai.ollama.chat.options.model=hf.co/bartowski/gemma-2-2b-it-GGUF
+
+#Basic Chatbot (Input: Prompt, Output: Response)
+http://localhost:8080
+
+#Image Explanation Chatbot (Input: Image-Name, Output: Explanation)
+http://localhost:8080/image.html
+
+#Image Upload Chatbot (Input: Image, Output: Store in Directory)
+http://localhost:8080/upload.html
+
+#Stream Chatbot (Input: Prompt, Output: Stream)
+http://localhost:8080/stream.html
+
+#Ask & Get Response (Input: Prompt, Output: Response)
+http://localhost:8080/ask?prompt=what%20is%20love
+
+#Read Image (Input: Static Image-Name, Output: Explanation)
+http://localhost:8080/read-photo
